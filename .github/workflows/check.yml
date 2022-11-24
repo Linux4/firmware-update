@@ -53,7 +53,7 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         submodules: true
 
@@ -71,9 +71,9 @@ jobs:
        latest_short=`echo $latest | cut -f1 -d '/'`
        current=`cat current.${{ matrix.model }}` || need_update=1
        [[ $latest != $current ]] && need_update=1
-       echo ::set-output name=latest_version::$latest
-       echo ::set-output name=latest_version_short::$latest_short
-       echo ::set-output name=need_update::$need_update
+       echo "latest_version=$latest" >> $GITHUB_OUTPUT
+       echo "latest_version_short=$latest_short" >> $GITHUB_OUTPUT
+       echo "need_update=$need_update" >> $GITHUB_OUTPUT
 
     - name: Fetch firmware
       if: steps.check.outputs.need_update == 1
