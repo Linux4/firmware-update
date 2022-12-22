@@ -82,7 +82,7 @@ jobs:
           - model: "SM-G991B"
             region: "DBT"
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4 vddcal_fw.bin.lz4"
-            files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
+            files_cp: "modem.bin modem_debug.bin"
           - model: "SM-N970F"
             region: "AUT"
             files_ap: "dqmdbg.img.lz4"
@@ -109,7 +109,7 @@ jobs:
           - model: "SM-P615"
             region: "XEF"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
-            files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
+            files_cp: "modem.bin modem_debug.bin"
 
     steps:
     - name: Checkout repo
@@ -146,19 +146,19 @@ jobs:
       if: steps.check.outputs.need_update == 1 && matrix.files_ap
       run: |
        unzip -p ${{ matrix.model }}-${{ steps.check.outputs.latest_version_short }}.zip "AP*" | tar xvf - -C out ${{ matrix.files_ap }}
-       cd out; for IMAGE in ${{ matrix.files_ap }}; do lz4 -d -m --rm $IMAGE; done; cd ..
+       cd out; for IMAGE in ${{ matrix.files_ap }}; do [ "$(echo $IMAGE | rev | cut -f1 -d '.' | rev)" = "lz4" ] && lz4 -d -m --rm $IMAGE; done; cd ..
 
     - name: Extract images from BL
       if: steps.check.outputs.need_update == 1 && matrix.files_bl
       run: |
        unzip -p ${{ matrix.model }}-${{ steps.check.outputs.latest_version_short }}.zip "BL*" | tar xvf - -C out ${{ matrix.files_bl }}
-       cd out; for IMAGE in ${{ matrix.files_bl }}; do lz4 -d -m --rm $IMAGE; done; cd ..
+       cd out; for IMAGE in ${{ matrix.files_bl }}; do [ "$(echo $IMAGE | rev | cut -f1 -d '.' | rev)" = "lz4" ] && lz4 -d -m --rm $IMAGE; done; cd ..
 
     - name: Extract images from CP
       if: steps.check.outputs.need_update == 1 && matrix.files_cp
       run: |
        unzip -p ${{ matrix.model }}-${{ steps.check.outputs.latest_version_short }}.zip "CP*" | tar xvf - -C out ${{ matrix.files_cp }}
-       cd out; for IMAGE in ${{ matrix.files_cp }}; do lz4 -d -m --rm $IMAGE; done; cd ..
+       cd out; for IMAGE in ${{ matrix.files_cp }}; do [ "$(echo $IMAGE | rev | cut -f1 -d '.' | rev)" = "lz4" ] && lz4 -d -m --rm $IMAGE; done; cd ..
 
     - name: Generate heimdall info
       if: steps.check.outputs.need_update == 1
