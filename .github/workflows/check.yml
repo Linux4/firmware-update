@@ -14,6 +14,11 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - model: "SM-E625F"
+            region: "INS"
+            files_ap: "dqmdbg.img.lz4"
+            files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
+            files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-G970F"
             region: "AUT"
             files_ap: "dqmdbg.img.lz4"
@@ -83,6 +88,11 @@ jobs:
             region: "DBT"
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4 vddcal_fw.bin.lz4"
             files_cp: "modem.bin modem_debug.bin"
+          - model: "SM-M625F"
+            region: "ZTO"
+            files_ap: "dqmdbg.img.lz4"
+            files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
+            files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-N970F"
             region: "AUT"
             files_ap: "dqmdbg.img.lz4"
