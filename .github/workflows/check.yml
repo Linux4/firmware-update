@@ -124,7 +124,7 @@ jobs:
       run: |
        sudo apt-get update
        sudo apt-get install -y lz4 python3-pip
-       pip3 install git+https://github.com/nlscc/samloader.git
+       pip3 install git+https://github.com/Linux4/samloader.git
 
     - name: Compare latest version with current version
       id: check
