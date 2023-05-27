@@ -68,7 +68,7 @@ jobs:
             region: "DBT"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4"
-            files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
+            files_cp: "modem.bin modem_debug.bin"
           - model: "SM-G981B"
             region: "DBT"
             files_ap: "dqmdbg.img.lz4"
