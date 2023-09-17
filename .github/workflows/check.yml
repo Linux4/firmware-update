@@ -119,7 +119,7 @@ jobs:
           - model: "SM-P615"
             region: "XEF"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
-            files_cp: "modem.bin modem_debug.bin"
+            files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
 
     steps:
     - name: Checkout repo
