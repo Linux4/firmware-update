@@ -16,11 +16,13 @@ jobs:
         include:
           - model: "SM-E625F"
             region: "INS"
+            imei: "350641034358959"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-G970F"
             region: "AUT"
+            imei: "354889108726363"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 param.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
@@ -31,6 +33,7 @@ jobs:
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-G973F"
             region: "AUT"
+            imei: "356127105158894"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 param.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
@@ -41,6 +44,7 @@ jobs:
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-G975F"
             region: "AUT"
+            imei: "356172100810248"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 param.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
@@ -61,11 +65,13 @@ jobs:
             files_cp: "modem.bin.lz4 modem_5g.bin.lz4 modem_debug.bin.lz4 modem_debug_5g.bin.lz4"
           - model: "SM-G980F"
             region: "DBT"
+            imei: "356007117597901"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-G985F"
             region: "DBT"
+            imei: "356844831856563"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
@@ -76,6 +82,7 @@ jobs:
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-G986B"
             region: "DBT"
+            imei: "359847104662532"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
@@ -90,16 +97,19 @@ jobs:
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-M625F"
             region: "ZTO"
+            imei: "354295851027712"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-N970F"
             region: "AUT"
+            imei: "357452104639739"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 param.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-N975F"
             region: "AUT"
+            imei: "356210102048357"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 param.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
@@ -115,9 +125,11 @@ jobs:
             files_cp: "modem.bin.lz4 modem_5g.bin.lz4 modem_debug.bin.lz4 modem_debug_5g.bin.lz4"
           - model: "SM-P610"
             region: "XEF"
+            imei: "R52N804CKLF"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
           - model: "SM-P615"
             region: "XEF"
+            imei: "353919118587132"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
 
@@ -148,7 +160,7 @@ jobs:
     - name: Fetch firmware
       if: steps.check.outputs.need_update == 1
       run: |
-       samloader -m ${{ matrix.model }} -r ${{ matrix.region }} download -v ${{ steps.check.outputs.latest_version }} -o ${{ matrix.model }}-${{ steps.check.outputs.latest_version_short }}.zip.enc4 -D
+       samloader -m ${{ matrix.model }} -r ${{ matrix.region }} -i ${{ matrix.imei }} download -v ${{ steps.check.outputs.latest_version }} -o ${{ matrix.model }}-${{ steps.check.outputs.latest_version_short }}.zip.enc4 -D
        mkdir -p out
        echo ${{ steps.check.outputs.latest_version_short }} >> version.txt
 
