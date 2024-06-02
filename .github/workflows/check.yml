@@ -100,7 +100,7 @@ jobs:
             files_bl: "harx.bin.lz4 keystorage.bin.lz4 ldfw.img.lz4 sboot.bin.lz4 ssp.img.lz4 tzar.img.lz4 tzsw.img.lz4 uh.bin.lz4 up_param.bin.lz4 vddcal_fw.bin.lz4"
             files_cp: "modem.bin.lz4 modem_debug.bin.lz4"
           - model: "SM-M625F"
-            region: "ZTO"
+            region: "EGY"
             imei: "354295851027712"
             files_ap: "dqmdbg.img.lz4"
             files_bl: "cm.bin.lz4 keystorage.bin.lz4 sboot.bin.lz4 uh.bin.lz4 up_param.bin.lz4"
